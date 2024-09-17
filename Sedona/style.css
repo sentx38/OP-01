@@ -1,57 +1,155 @@
 .page {
   display: flex;
+	flex-direction: column;
   align-items: center;
-	margin: 0px;
+  margin: 0;
   justify-content: center;
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
 
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-ul,ol{
-	list-style-type: none;
+ul,
+ol {
+  list-style-type: none;
 }
 
 .container {
-	width: 100%;
+  width: 100%;
 }
 
 .navigation {
-	background-color: aqua;
-	padding-top: 20px;
-	height: 70px;
-	display: grid;
-	grid-template-columns: 139px 1fr 1fr;
+  background-color: #ffffff;
+  padding-top: 20px;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 139px 1fr 1fr;
 }
 .navigation-list {
-	
-	text-align: left;
-	display: flex;
-	gap: 18px;
+  text-align: left;
+  display: flex;
+  gap: 18px;
 }
 
 .user-navigation {
-	display: grid;
-	grid-template-columns: 1fr 160px 70px;
-	justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 160px 70px;
+  justify-content: flex-end;
 }
 
 .user-navigation-list {
-	justify-content: flex-end;
-	text-align: left;
-	display: flex;
-	gap: 16px;
+  justify-content: flex-end;
+  text-align: left;
+  display: flex;
+  gap: 16px;
 }
 .header-button {
-	
-	height: 37.24px;
-	width: 160px;
-	background-color: aquamarine;
-	text-align: center;
-	margin: 4px 16px;
-	padding-top: 14px;
-	border: 2px;
-	border-radius: 4px;
+  height: 37.24px;
+  width: 160px;
+  background-color: #756257;
+  margin: 4px 16px;
+  border: 2px;
+  border-radius: 4px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite {
+	color: #756257;
+}
+
+.favorite-item{
+	display: flex;
+	height: 25px;
+	width: 25px;
+	background: red;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.button-text {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("../Sedona/images/png/index-background.png") no-repeat center
+    center;
+  background-size: cover; /* Фон растягивается, чтобы покрыть весь блок */
+  padding: 10vh 0;
+  min-height: auto;
+  box-sizing: border-box;
+}
+
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5vh 0;
+  background: url("../Sedona/images/png/welcome.png") no-repeat center center;
+  background-size: contain;
+  width: 100%; /* Устанавливаем ширину 100% */
+  min-height: 300px;
+  box-sizing: border-box;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 768px) {
+	.welcome {
+			background-size: cover;
+			padding: 10vh 0;
+			min-height: 250px;
+	}
+
+	.welcome-text {
+			background-size: 80%; /* Уменьшаем фон на мобильных */
+			font-size: 4vw;
+			min-height: 250px;
+	}
+}
+
+@media (max-width: 480px) {
+	.welcome {
+			background-size: cover;
+			padding: 8vh 0;
+			min-height: 200px;
+	}
+
+	.welcome-text {
+			background-size: 100%; /* Фон занимает всю ширину */
+			font-size: 5vw;
+			min-height: 200px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.welcome {
+			background-size: 150%; /* Увеличиваем фон на больших экранах */
+			padding: 1vh 0;
+			min-height: 100%;
+	}
+
+	.welcome-text {
+			background-size: 30%; /* Увеличиваем фон внутри блока welcome-text */
+			font-size: 2.5vw; /* Текст увеличивается на больших экранах */
+			min-height: 350px;
+	}
 }
