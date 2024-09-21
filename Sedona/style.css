@@ -1,155 +1,172 @@
-.page {
-  display: flex;
-	flex-direction: column;
-  align-items: center;
-  margin: 0;
-  justify-content: center;
-  font-family: sans-serif;
+:root {
+  --basic-black: #000000;
+  --basic-dark: #333333;
+  --basic-sedona-blue: #81b3d2;
+  --basic-sedona-sky: #669EC0;
+  --basic-sedona-dark: #5496BD;
+  --basic-white: #ffffff;
+  --basic-white-opacity: rgba(255, 255, 255, 0.3);
+  --basic-footer-bgc: rgba(255, 255, 255, 0.9);
+  --basic-black-opacity: rgba(0, 0, 0, 0.3);
+  --basic-grey: #f2f2f2;
+  --basic-grey-shadow: #ababab;
+  --basic-grey-bg: #eeeeee;
+  --basic-grey-hov: #ebebeb;
+  --basic-grey-border: #e5e5e5;
+  --basic-grey-disabled: #6a6a6a;
+  --basic-calendar: #a9a9a9;
+  --basic-sorter: #cacaca;
+  --basic-rating: #666666;
+  --basic-brown: #766357;
+  --basic-brown-hov: #604e43;
+  --basic-brown-active: #503e33;
+  --basic-wrap: #3c4b50;
+  --basic-academy-logo: #231F20;
+  --basic-academy-logo-active: #bdbbbc;
+  --basic-tomato: tomato;
+}
+
+.page,
+.page-body {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+
+  display: grid;
+  width: 100%;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
   text-decoration: none;
+
 }
 
-ul,
-ol {
-  list-style-type: none;
+img.favorite-title svg{
+  fill: white;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .container {
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
+
+  background-color: var(--basic-white);
+
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
-.navigation {
-  background-color: #ffffff;
-  padding-top: 20px;
+body {
+  min-width: 1280px;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--basic-dark);
+  margin: 0;
+  background-color: var(--basic-grey);
+}
+
+.navigation{
   height: 70px;
-  display: grid;
-  grid-template-columns: 139px 1fr 1fr;
-}
-.navigation-list {
-  text-align: left;
   display: flex;
-  gap: 18px;
+  background-color: #ffffff;
+}
+.navigation-link{
+  color: var(--basic-black);
+  font-weight: bold;
+}
+.user-navigation-link{
+  color: #fff;
 }
 
-.user-navigation {
-  display: grid;
-  grid-template-columns: 1fr 160px 70px;
-  justify-content: flex-end;
+.navigation-list{
+  display: flex;
+  list-style-type: none;
+  gap: 34px;
+  padding: 20px 17px;
+  align-items: center;
+  margin: 0;
 }
 
-.user-navigation-list {
-  justify-content: flex-end;
-  text-align: left;
+
+.user-navigation{
+  height: 70px;
   display: flex;
-  gap: 16px;
-}
-.header-button {
-  height: 37.24px;
-  width: 160px;
-  background-color: #756257;
-  margin: 4px 16px;
-  border: 2px;
-  border-radius: 4px;
-  display: grid;
+  gap: 20px;
+  margin-left: auto;
   justify-content: center;
   align-items: center;
+  padding: 0 70px 0 0;
 }
 
-.favorite {
-	color: #756257;
+.user-navigation-list{
+
+  display: flex;
+  list-style-type: none;
+  gap: 15px;
+  padding: 0;
+  margin: 0 auto;
+
 }
 
+.favorite{
+  display: flex;
+}
 .favorite-item{
-	display: flex;
-	height: 25px;
-	width: 25px;
-	background: red;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  bottom: 6px;
+  background-color: #36dc00;
+
+  border-radius: 50%;
 }
 
-.button-text {
-  color: #ffffff;
+
+.button-text{
+  display: flex;
+  height: 37px;
+  width: 160px;
+  background-color: #503e33;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
   text-transform: uppercase;
-  font-weight: bold;
+  color: whitesmoke;
 }
 
 .welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 75px;
+  padding-top: 77px;
+
   text-align: center;
-  background: url("../Sedona/images/png/index-background.png") no-repeat center
-    center;
-  background-size: cover; /* Фон растягивается, чтобы покрыть весь блок */
-  padding: 10vh 0;
-  min-height: auto;
-  box-sizing: border-box;
-}
 
-.welcome-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5vh 0;
-  background: url("../Sedona/images/png/welcome.png") no-repeat center center;
-  background-size: contain;
-  width: 100%; /* Устанавливаем ширину 100% */
-  min-height: 300px;
-  box-sizing: border-box;
-}
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-@media (max-width: 768px) {
-	.welcome {
-			background-size: cover;
-			padding: 10vh 0;
-			min-height: 250px;
-	}
-
-	.welcome-text {
-			background-size: 80%; /* Уменьшаем фон на мобильных */
-			font-size: 4vw;
-			min-height: 250px;
-	}
-}
-
-@media (max-width: 480px) {
-	.welcome {
-			background-size: cover;
-			padding: 8vh 0;
-			min-height: 200px;
-	}
-
-	.welcome-text {
-			background-size: 100%; /* Фон занимает всю ширину */
-			font-size: 5vw;
-			min-height: 200px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.welcome {
-			background-size: 150%; /* Увеличиваем фон на больших экранах */
-			padding: 1vh 0;
-			min-height: 100%;
-	}
-
-	.welcome-text {
-			background-size: 30%; /* Увеличиваем фон внутри блока welcome-text */
-			font-size: 2.5vw; /* Текст увеличивается на больших экранах */
-			min-height: 350px;
-	}
+  background-color: var(--basic-wrap);
+  background-image: url(./img/shape.svg), url(./img/background.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  background-size: 100%, cover;
 }
